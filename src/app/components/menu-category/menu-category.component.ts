@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {CategoryService} from '../../services/category.service';
+import { CategoryService } from '../../services/category.service';
 import { Category } from 'src/app/models/category';
 @Component({
   selector: 'app-menu-category',
