@@ -20,6 +20,11 @@ const routes: Routes =
           component:HomeComponent,
         },
         {
+          //www.muratulug.com/page/1
+          path:"page/:pageIndex",
+          component:HomeComponent
+        },
+        {
           //www.muratulug.com/about
           path:"about",
           component:AboutMeComponent
