@@ -20,13 +20,13 @@ const routes: Routes =
           component:HomeComponent,
         },
         {
-          //www.muratulug.com/hakkimizda
-          path:"hakkimizda",
+          //www.muratulug.com/about
+          path:"about",
           component:AboutMeComponent
         },
         {
-          //www.muratulug.com/iletisim
-          path:"iletisim",
+          //www.muratulug.com/contact
+          path:"contact",
           component:ContactComponent
         }
       ]
