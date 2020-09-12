@@ -12,7 +12,7 @@ export class ArticlesComponent implements OnInit {
   @Input() articles:Article[];
   @Input() page:number;
   @Input() pageSize:number;
-
+  defaultArticlePicture:string="assets/article.empty.jpg"
 
   constructor(private router:Router,private route:ActivatedRoute) { }
 
