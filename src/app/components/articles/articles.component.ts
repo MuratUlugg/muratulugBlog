@@ -40,6 +40,10 @@ export class ArticlesComponent implements OnInit {
         let categoryId = this.route.snapshot.paramMap.get("id");
         this.router.navigateByUrl(`/category/${categoryName}/${categoryId}/page/${this.page}`);
         break;
+        case "search":
+          let searchText = this.route.snapshot.queryParamMap.get("s");
+          this.router.navigateByUrl(`/search/page/${this.page}?s=${searchText}`);
+          break;
       default:
         break;
     }

@@ -7,6 +7,7 @@ import { MainLayoutComponent } from './layout/main-layout/main-layout.component'
 import { AdminLayoutComponent } from './layout/admin-layout/admin-layout.component';
 import { ArticleComponent } from './pages/article/article.component';
 import { CategoryArticlesComponent } from './pages/category-articles/category-articles.component';
+import { SearchArticlesComponent } from './pages/search-articles/search-articles.component';
 
 const routes: Routes =
 [
@@ -40,6 +41,11 @@ const routes: Routes =
           //www.muratulug.com/category/name/1/5/2
           path:"category/:name/:id/page/:pageIndex",
           component:CategoryArticlesComponent
+        },
+        {
+          //www.muratulug.com/search/1/5
+          path:"search/page/:pageIndex",
+          component:SearchArticlesComponent
         },
         {
           //www.muratulug.com/about

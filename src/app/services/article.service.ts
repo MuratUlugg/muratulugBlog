@@ -24,4 +24,8 @@ export class ArticleService {
     let api = `${this.apiUrl}/GetArticleWithCategory/${id}/${page}/${pageSize}`;
     return this.httpClient.get<ArticlePg>(api).pipe(tap(x=>{this.loading=false;}));
   }
+  public getArticleSearch (searchText:string,page:number,pageSize:number){
+    let api = `${this.apiUrl}/SearchArticle/${searchText}/${page}/${pageSize}`;
+    return this.httpClient.get<ArticlePg>(api).pipe(tap(x=>{this.loading=false;}));
+  }
 }
