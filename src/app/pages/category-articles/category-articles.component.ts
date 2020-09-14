@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Article } from 'src/app/models/article';
 import { ArticleService } from 'src/app/services/article.service';
@@ -8,10 +8,8 @@ import { ArticleService } from 'src/app/services/article.service';
   templateUrl: './category-articles.component.html',
   styleUrls: ['./category-articles.component.css']
 })
-export class CategoryArticlesComponent implements OnInit,OnDestroy {
-  ngOnDestroy(): void{ //Sayfa geçişlerinde ajax isteklerini iptal etmek için
-    if(this.ajax != null) {this.ajax.unsubscribe();}  // İptal et
-  }
+export class CategoryArticlesComponent implements OnInit {
+
   page:number=1;
   articles:Article[]=[];
   totalCount:number=0;
@@ -22,7 +20,7 @@ export class CategoryArticlesComponent implements OnInit,OnDestroy {
   constructor(private articleService:ArticleService,private route:ActivatedRoute,private router:Router) { }
 
   ngOnInit(): void {
-    if (this.ajax != null) this.ajax.unsubscribe();
+    if (this.ajax != null) {this.ajax.unsubscribe();}
     this.route.paramMap.subscribe(params=>{
       this.articleService.loading= true;
       this.articles=[];
