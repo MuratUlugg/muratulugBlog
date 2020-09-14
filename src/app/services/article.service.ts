@@ -8,21 +8,20 @@ import { Article } from '../models/article';
   providedIn: 'root'
 })
 export class ArticleService {
-
   constructor( private httpClient:HttpClient) { }
-
   public loading:boolean=true;
   private apiUrl:string="https://localhost:44395/api/Articles";
-
   public getArticle(page:number,pageSize:number)
   {
     let api = `${this.apiUrl}/${page}/${pageSize}`;
     return this.httpClient.get<ArticlePg>(api).pipe(tap(x=>{this.loading=false;}));
   }
-
   public getArticleId(id:number){
     let api = `${this.apiUrl}/${id}`;
     return this.httpClient.get<Article>(api).pipe(tap(x=>{this.loading=false;}));
   }
-
+  public getArticleWithCategory(id:number,page:number,pageSize:number){
+    let api = `${this.apiUrl}/GetArticleWithCategory/${id}/${page}/${pageSize}`;
+    return this.httpClient.get<ArticlePg>(api).pipe(tap(x=>{this.loading=false;}));
+  }
 }

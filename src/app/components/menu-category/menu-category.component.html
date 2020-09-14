@@ -10,7 +10,7 @@
 
     <h3 *ngFor="let item of categories">
       <strong>
-        <a [routerLink]="['/kategori',item.name,item.id]" class="btn btn-link"><i class="fas fa-arrow-circle-right"> {{item.name}}</i></a>
+        <a [routerLink]="['/category',item.name | urlformat ,item.id]" class="btn btn-link"><i class="fas fa-arrow-circle-right"> {{item.name}}</i></a>
       </strong>
     </h3>
 
