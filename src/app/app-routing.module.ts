@@ -5,6 +5,7 @@ import { AboutMeComponent } from './pages/about-me/about-me.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { MainLayoutComponent } from './layout/main-layout/main-layout.component';
 import { AdminLayoutComponent } from './layout/admin-layout/admin-layout.component';
+import { ArticleComponent } from './pages/article/article.component';
 
 const routes: Routes =
 [
@@ -23,6 +24,11 @@ const routes: Routes =
           //www.muratulug.com/page/1
           path:"page/:pageIndex",
           component:HomeComponent
+        },
+        {
+          //www.muratulug.com/article/1
+          path:"article/:id",
+          component:ArticleComponent
         },
         {
           //www.muratulug.com/about
