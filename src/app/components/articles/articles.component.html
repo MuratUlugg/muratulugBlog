@@ -1,3 +1,26 @@
+
+<div *ngIf="articleService.loading">
+  <main *ngFor="let item of createRange()" class="page mb-4">
+    <!-- Content -->
+    <div class="page-content">
+        <!-- Placeholder Content -->
+        <div class="placeholder-content">
+            <div class="placeholder-content_item"></div>
+            <div class="placeholder-content_item"></div>
+            <div class="placeholder-content_item"></div>
+            <div class="placeholder-content_item"></div>
+            <div class="placeholder-content_item"></div>
+            <div class="placeholder-content_item"></div>
+            <div class="placeholder-content_item"></div>
+            <div class="placeholder-content_item"></div>
+            <div class="placeholder-content_item"></div>
+            <div class="placeholder-content_item"></div>
+            <div class="placeholder-content_item"></div>
+        </div>
+    </div>
+  </main>
+</div>
+
 <div *ngIf="articles.length>0; else emptyTemplate">
   <div *ngFor="let item of articles | paginate:{itemsPerPage:pageSize , currentPage:page,totalItems:totalCount}">
     <ng-container *ngTemplateOutlet="horizontalTemplate;context:{id:item.id,commentCount:item.commentCount,viewCount:item.viewCount,categoryName:item.category.name,publishDate:item.publishDate,contentSummary:item.contentSummary,title:item.title,picture:item.picture}" >
@@ -6,7 +29,7 @@
 </div>
 
 <ng-template #emptyTemplate>
-  <div class="alert alert-danger" role="alert">
+  <div *ngIf="!articleService.loading" class="alert alert-danger" role="alert">
     Makale Bulunamadı !
   </div>
 </ng-template>
@@ -19,8 +42,8 @@
           <img [src]="picture || defaultArticlePicture" class="card-img">
         </div>
         <div class="col-md-8">
-          <h5 class="card title">{{title}}</h5>
-          <p class="card text">{{contentSummary}}</p>
+          <h5 class="title mt-2">{{title}}</h5>
+          <p class="text">{{contentSummary}}</p>
         </div>
       </div>
     </div>
@@ -36,4 +59,4 @@
     </div>
   </div>
 </ng-template>
-<pagination-controls responsive="true" (pageChange)="pageChanged($event)" previousLabel="Geri" nextLabel='İleri' ></pagination-controls>
+<pagination-controls *ngIf="totalCount>pageSize" responsive="true" (pageChange)="pageChanged($event)" previousLabel="Geri" nextLabel='İleri' ></pagination-controls>
