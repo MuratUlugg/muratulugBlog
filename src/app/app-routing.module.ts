@@ -26,8 +26,8 @@ const routes: Routes =
           component:HomeComponent
         },
         {
-          //www.muratulug.com/article/1
-          path:"article/:id",
+          //www.muratulug.com/article/title123/1
+          path:"article/:title/:id",
           component:ArticleComponent
         },
         {

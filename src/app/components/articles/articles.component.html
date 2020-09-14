@@ -55,7 +55,7 @@
       <span class="badge badge-pill badge-success"><i class="fa fa-eye"></i> {{viewCount}}</span>
       <span class="mr-1"></span>
       <span class="badge badge-pill badge-primary"><i class="fa fa-comments"></i> {{commentCount}}</span>
-      <a [routerLink]="['/article',id]" class="btn btn-primary btn-sm float-right" > Devamını Oku </a>
+      <a [routerLink]="['/article',title | urlformat ,id]" class="btn btn-primary btn-sm float-right" > Devamını Oku </a>
     </div>
   </div>
 </ng-template>
