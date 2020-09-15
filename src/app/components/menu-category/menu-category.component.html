@@ -1,5 +1,5 @@
 <div class="card border-primary">
-  <div class="card-header">Kategori</div>
+  <div class="card-header"><strong>Kategoriler</strong> </div>
   <div class="card-body text-primary">
     <div *ngIf="categories.length == 0" class="d-flex justify-content-center">
       <div class="spinner-grow text-primary" role="status">
@@ -8,11 +8,13 @@
     </div>
 
 
-    <h3 *ngFor="let item of categories">
+    <h1 *ngFor="let item of categories"  >
       <strong>
-        <a [routerLink]="['/category',item.name | urlformat ,item.id]" class="btn btn-link"><i class="fas fa-arrow-circle-right"> {{item.name}}</i></a>
+        <div class="p">
+        <a [routerLink]="['/category',item.name | urlformat ,item.id]" class="btn btn-link text-left"><i class="fas fa-arrow-alt-circle-right"> {{item.name}}</i></a>
+      </div>
       </strong>
-    </h3>
+    </h1>
 
 
   </div>
