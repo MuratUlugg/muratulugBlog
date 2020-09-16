@@ -9,11 +9,9 @@
 
 
     <h1 *ngFor="let item of categories"  >
-      <strong>
         <div class="p">
         <a [routerLink]="['/category',item.name | urlformat ,item.id]" class="btn btn-link text-left"><i class="fas fa-arrow-alt-circle-right"> {{item.name}}</i></a>
       </div>
-      </strong>
     </h1>
 
 
