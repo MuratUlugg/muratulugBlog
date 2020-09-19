@@ -42,4 +42,8 @@ export class ArticleService {
     let api = `${this.apiUrl}/GetArticleArchiveList/${year}/${month}/${page}/${pageSize}`;
     return this.httpClient.get<ArticlePg>(api).pipe(tap(x=>{this.loading=false}));
   }
+  public articleViewCountUp(id:number){
+    let api = `${this.apiUrl}/ArticleViewCountUp/${id}`;
+    return this.httpClient.get(api);
+  }
 }
