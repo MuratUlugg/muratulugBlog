@@ -9,7 +9,7 @@
     </div>
     <h2 *ngFor="let item of archives">
       <div class="p">
-        <a [routerLink]="['/archive']" class="btn btn-link text-left "><i class="fas fa-chevron-right"> {{item.year}} {{item.monthName}} ({{item.count}}) </i></a>
+        <a [routerLink]="['/archive',item.year,item.month]" class="btn btn-link text-left "><i class="fas fa-chevron-right"> {{item.year}} {{item.monthName}} ({{item.count}}) </i></a>
     </div>
     </h2>
   </div>

@@ -38,4 +38,8 @@ export class ArticleService {
     let api = `${this.apiUrl}/GetArticlesArchive`;
     return this.httpClient.get<ArticleArchive[]>(api).pipe(tap(x=>{this.loading=false}));
   };
+  public getArticleArchiveList(year:number,month:number,page:number,pageSize:number) {
+    let api = `${this.apiUrl}/GetArticleArchiveList/${year}/${month}/${page}/${pageSize}`;
+    return this.httpClient.get<ArticlePg>(api).pipe(tap(x=>{this.loading=false}));
+  }
 }

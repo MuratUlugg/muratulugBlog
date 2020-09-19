@@ -44,6 +44,11 @@ export class ArticlesComponent implements OnInit {
           let searchText = this.route.snapshot.queryParamMap.get("s");
           this.router.navigateByUrl(`/search/page/${this.page}?s=${searchText}`);
           break;
+          case "archive":
+            let year = this.route.snapshot.paramMap.get("year");
+            let month = this.route.snapshot.paramMap.get("month");
+            this.router.navigateByUrl(`/archive/${year}/${month}/page/${this.page}`);
+            break;
       default:
         break;
     }
