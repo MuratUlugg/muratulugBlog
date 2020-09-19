@@ -36,8 +36,8 @@ export class ArchiveComponent implements OnInit {
           this.loadingItem  = this.totalCount-(this.page-1)*this.pageSize
         }
       };
-      if(params.get("page")){
-        this.page= Number(params.get("page"));
+      if(params.get("pageIndex")){
+        this.page= Number(params.get("pageIndex"));
       }
       let year=Number(params.get("year"));
       let month=Number(params.get("month"));
