@@ -5,7 +5,7 @@ import { Contact } from '../models/contact';
 @Injectable({
   providedIn: 'root'
 })
-export class HelperServiceService {
+export class HelperService {
   constructor(private httpClient:HttpClient) {  }
     public loading:boolean=true;
     private apiUrl:string="https://localhost:44395/api/helper";
