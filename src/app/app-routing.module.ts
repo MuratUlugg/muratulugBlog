@@ -9,6 +9,11 @@ import { ArticleComponent } from './pages/article/article.component';
 import { CategoryArticlesComponent } from './pages/category-articles/category-articles.component';
 import { SearchArticlesComponent } from './pages/search-articles/search-articles.component';
 import { ArchiveComponent } from './pages/archive/archive.component';
+import { AdminHomeComponent } from './admin-pages/admin-home/admin-home.component';
+import { AdminArticleComponent } from './admin-pages/article/admin-article/admin-article.component';
+import { AdminArticleListComponent } from './admin-pages/article/admin-article-list/admin-article-list.component';
+import { AdminArticleUpdateComponent } from './admin-pages/article/admin-article-update/admin-article-update.component';
+import { AdminArticleAddComponent } from './admin-pages/article/admin-article-add/admin-article-add.component';
 
 const routes: Routes =
 [
@@ -71,7 +76,41 @@ const routes: Routes =
   {
     //www.muratulug.com/admin
     path:"admin",
-    component:AdminLayoutComponent
+    component:AdminLayoutComponent,
+    children:[
+      //www.muratulug.com/admin/home
+      {
+        path:"",
+        component:AdminHomeComponent
+      },
+      {
+        path:"home",
+        component:AdminHomeComponent
+      },
+      //www.muratulug.com/admin/article
+      {
+        path:"article",
+        component:AdminArticleComponent,
+        children:[
+          //www.muratulug.com/admin/list
+          {
+            path:"list",
+            component:AdminArticleListComponent
+          },
+           //www.muratulug.com/admin/article/update/21
+          {
+            path:"update/:id",
+            component:AdminArticleUpdateComponent
+          },
+           //www.muratulug.com/admin/article/add
+          {
+            path:"add",
+            component:AdminArticleAddComponent
+          }
+        ]
+      }
+
+    ]
   }
 ];
 
