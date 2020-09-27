@@ -5,23 +5,21 @@ import { HttpClientModule } from "@angular/common/http";
 import { MainModule } from "./pages/main.module"
 
 import { AppComponent } from './app.component';
+import { AdminModule } from './admin-pages/admin.module';
 
-import { AdminLayoutComponent } from './layout/admin-layout/admin-layout.component';
-import { AdminNavComponent } from './nav/admin-nav/admin-nav.component';
 
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    AdminLayoutComponent,
-    AdminNavComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    MainModule
+    MainModule,
+    AdminModule
   ],
   providers: [],
   bootstrap: [AppComponent]
