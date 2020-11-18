@@ -9,6 +9,7 @@ import { ArticleService } from 'src/app/services/article.service';
   styleUrls: ['./articles.component.css']
 })
 export class ArticlesComponent implements OnInit {
+  defaultArticlePicture:string="assets/article.empty.jpg"
   @Input() totalCount:number;
   @Input() articles:Article[];
   @Input() page:number;
