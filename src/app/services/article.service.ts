@@ -13,6 +13,10 @@ export class ArticleService {
   public loading:boolean=true;
   private apiUrl:string="https://localhost:44395/api/Articles";
 
+  public getArticlesWithoutPg(){
+    return this.httpClient.get<Article[]>(this.apiUrl);
+  }
+
   public getArticle(page:number,pageSize:number)
   {
     let api = `${this.apiUrl}/${page}/${pageSize}`;

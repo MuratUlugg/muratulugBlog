@@ -15,7 +15,6 @@ export class ArticlesComponent implements OnInit {
   @Input() pageSize:number;
   @Input() loadingItem:number;
   @Input() typeList:string;
-  defaultArticlePicture:string="assets/article.empty.jpg"
 
   constructor(private router:Router,private route:ActivatedRoute,public articleService:ArticleService) { }
   createRange(){
