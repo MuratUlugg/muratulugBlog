@@ -6,24 +6,23 @@ import { ArticleService } from 'src/app/services/article.service';
 @Component({
   selector: 'app-menu-article-archive',
   templateUrl: './menu-article-archive.component.html',
-  styleUrls: ['./menu-article-archive.component.css']
+  styleUrls: ['./menu-article-archive.component.css'],
 })
 export class MenuArticleArchiveComponent implements OnInit {
-
-  archives:ArticleArchive[]=[];
-  constructor(public articleService:ArticleService,private route:ActivatedRoute) { }
+  archives: ArticleArchive[] = [];
+  constructor(
+    public articleService: ArticleService,
+    private route: ActivatedRoute
+  ) {}
 
   ngOnInit(): void {
-
-    this.articleService.getArticlesArchive().subscribe(data =>
-    {
-      this.archives=data;
-    }
-    ,error =>
-    {
-      console.log("Bir hata oluştur"+error);   //Hataları görmek için
-    });
-
+    this.articleService.getArticlesArchive().subscribe(
+      (data) => {
+        this.archives = data;
+      },
+      (error) => {
+        console.log('Bir hata oluştur' + error); //Hataları görmek için
+      }
+    );
   }
-
 }

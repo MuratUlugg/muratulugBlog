@@ -15,109 +15,104 @@ import { AdminArticleListComponent } from './admin-pages/article/admin-article-l
 import { AdminArticleUpdateComponent } from './admin-pages/article/admin-article-update/admin-article-update.component';
 import { AdminArticleAddComponent } from './admin-pages/article/admin-article-add/admin-article-add.component';
 
-const routes: Routes =
-[
+const routes: Routes = [
   {
     //www.muratulug.com/
-    path:"",
-    component:MainLayoutComponent,
-    children:
-    [
-        {
-            //www.muratulug.com/
-          path:"",
-          component:HomeComponent,
-        },
-        {
-          //www.muratulug.com/page/1
-          path:"page/:pageIndex",
-          component:HomeComponent
-        },
-        {
-          //www.muratulug.com/article/title123/1
-          path:"article/:title/:id",
-          component:ArticleComponent
-        },
-        {
-          //www.muratulug.com/category/name/1
-          path:"category/:name/:id",
-          component:CategoryArticlesComponent
-        },
-        {
-          //www.muratulug.com/category/name/1/5/2
-          path:"category/:name/:id/page/:pageIndex",
-          component:CategoryArticlesComponent
-        },
-        {
-          //www.muratulug.com/search/1/5
-          path:"search/page/:pageIndex",
-          component:SearchArticlesComponent
-        },
-        {
-          path:"archive/:year/:month",
-          component:ArchiveComponent
-        },
-        {
-          path:"archive/:year/:month/page/:pageIndex",
-          component:ArchiveComponent
-        },
-        {
-          //www.muratulug.com/about
-          path:"about",
-          component:AboutMeComponent
-        },
-        {
-          //www.muratulug.com/contact
-          path:"contact",
-          component:ContactComponent
-        }
-      ]
+    path: '',
+    component: MainLayoutComponent,
+    children: [
+      {
+        //www.muratulug.com/
+        path: '',
+        component: HomeComponent,
+      },
+      {
+        //www.muratulug.com/page/1
+        path: 'page/:pageIndex',
+        component: HomeComponent,
+      },
+      {
+        //www.muratulug.com/article/title123/1
+        path: 'article/:title/:id',
+        component: ArticleComponent,
+      },
+      {
+        //www.muratulug.com/category/name/1
+        path: 'category/:name/:id',
+        component: CategoryArticlesComponent,
+      },
+      {
+        //www.muratulug.com/category/name/1/5/2
+        path: 'category/:name/:id/page/:pageIndex',
+        component: CategoryArticlesComponent,
+      },
+      {
+        //www.muratulug.com/search/1/5
+        path: 'search/page/:pageIndex',
+        component: SearchArticlesComponent,
+      },
+      {
+        path: 'archive/:year/:month',
+        component: ArchiveComponent,
+      },
+      {
+        path: 'archive/:year/:month/page/:pageIndex',
+        component: ArchiveComponent,
+      },
+      {
+        //www.muratulug.com/about
+        path: 'about',
+        component: AboutMeComponent,
+      },
+      {
+        //www.muratulug.com/contact
+        path: 'contact',
+        component: ContactComponent,
+      },
+    ],
   },
   {
     //www.muratulug.com/admin
-    path:"admin",
-    component:AdminLayoutComponent,
-    children:[
+    path: 'admin',
+    component: AdminLayoutComponent,
+    children: [
       //www.muratulug.com/admin/home
       {
-        path:"",
-        component:AdminHomeComponent
+        path: '',
+        component: AdminHomeComponent,
       },
       {
-        path:"home",
-        component:AdminHomeComponent
+        path: 'home',
+        component: AdminHomeComponent,
       },
       //www.muratulug.com/admin/article
       {
-        path:"article",
-        component:AdminArticleComponent,
-        children:[
+        path: 'article',
+        component: AdminArticleComponent,
+        children: [
           //www.muratulug.com/admin/list
           {
-            path:"list",
-            component:AdminArticleListComponent
+            path: 'list',
+            component: AdminArticleListComponent,
           },
-           //www.muratulug.com/admin/article/update/21
+          //www.muratulug.com/admin/article/update/21
           {
-            path:"update/:id",
-            component:AdminArticleUpdateComponent
+            path: 'update/:id',
+            component: AdminArticleUpdateComponent,
           },
-           //www.muratulug.com/admin/article/add
+          //www.muratulug.com/admin/article/add
           {
-            path:"add",
-            component:AdminArticleAddComponent
-          }
-        ]
-      }
-
-    ]
-  }
+            path: 'add',
+            component: AdminArticleAddComponent,
+          },
+        ],
+      },
+    ],
+  },
 ];
-
-
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

@@ -7,29 +7,27 @@ import { ArticleService } from 'src/app/services/article.service';
 @Component({
   selector: 'app-article',
   templateUrl: './article.component.html',
-  styleUrls: ['./article.component.css']
+  styleUrls: ['./article.component.css'],
 })
 export class ArticleComponent implements OnInit {
+  article: Article;
+  category: Category;
 
-  article:Article;
-  category:Category;
-
-  constructor(public articleService:ArticleService,private route:ActivatedRoute) { }
+  constructor(
+    public articleService: ArticleService,
+    private route: ActivatedRoute
+  ) {}
 
   ngOnInit(): void {
-    this.route.paramMap.subscribe(params=>{
-      this.articleService.loading=true;
-      let id = this.route.snapshot.paramMap.get("id")
+    this.route.paramMap.subscribe((params) => {
+      this.articleService.loading = true;
+      let id = this.route.snapshot.paramMap.get('id');
 
-      this.articleService.getArticleId(Number(id)).subscribe(data => {
-        this.article=data;
-        this.category=data.category;
+      this.articleService.getArticleId(Number(id)).subscribe((data) => {
+        this.article = data;
+        this.category = data.category;
         this.articleService.articleViewCountUp(this.article.id).subscribe();
       });
-
-    }) ;
-
-
+    });
   }
-
 }

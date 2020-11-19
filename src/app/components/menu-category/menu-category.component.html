@@ -8,13 +8,13 @@
     </div>
 
 
-    <h1 *ngFor="let item of categories"  >
-        <div class="p">
-        <a [routerLink]="['/category',item.name | urlformat ,item.id]" class="btn btn-link text-left"><i class="fas fa-arrow-alt-circle-right"> {{item.name}}</i></a>
+    <h1 *ngFor="let item of categories">
+      <div class="p">
+        <a [routerLink]="['/category',item.name | urlformat ,item.id]" class="btn btn-link text-left"><i
+            class="fas fa-arrow-alt-circle-right"> {{item.name}}</i></a>
       </div>
     </h1>
 
 
   </div>
 </div>
-

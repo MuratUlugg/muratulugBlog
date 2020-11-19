@@ -5,18 +5,16 @@ import { ArticleService } from 'src/app/services/article.service';
 @Component({
   selector: 'app-menu-article-most-view',
   templateUrl: './menu-article-most-view.component.html',
-  styleUrls: ['./menu-article-most-view.component.css']
+  styleUrls: ['./menu-article-most-view.component.css'],
 })
 export class MenuArticleMostViewComponent implements OnInit {
-  articles:Article[]=[];
+  articles: Article[] = [];
 
-  constructor(public articleService:ArticleService) { }
+  constructor(public articleService: ArticleService) {}
 
   ngOnInit(): void {
-    this.articleService.getArticleByMostView().subscribe(data=>{
-      this.articles=data;
+    this.articleService.getArticleByMostView().subscribe((data) => {
+      this.articles = data;
     });
-
   }
-
 }

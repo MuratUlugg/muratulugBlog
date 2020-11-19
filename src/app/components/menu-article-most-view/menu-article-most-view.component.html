@@ -9,8 +9,9 @@
     </div>
     <h2 *ngFor="let item of articles">
       <div class="p">
-        <a [routerLink]="['/article',item.title | urlformat ,item.id]" class="btn btn-link text-left "><i class="fas fa-chevron-right"> {{item.title}} </i></a>
-    </div>
+        <a [routerLink]="['/article',item.title | urlformat ,item.id]" class="btn btn-link text-left "><i
+            class="fas fa-chevron-right"> {{item.title}} </i></a>
+      </div>
     </h2>
   </div>
 </div>

@@ -1,23 +1,25 @@
-<app-page-title [title]="'İletişim'" ></app-page-title>
+<app-page-title [title]="'İletişim'"></app-page-title>
 <form *ngIf="info==null" (ngSubmit)="onSubmit()" [formGroup]="contactForm">
-<div class="form-container">
-  <mat-form-field >
-    <input matInput placeholder="İsminiz" formControlName="name">
-    <mat-error *ngIf="getControls.name.invalid">{{getValidationMessage(getControls.name,"İsim")}}</mat-error>
-  </mat-form-field>
-  <mat-form-field >
-    <input matInput placeholder="E-Mail Adresiniz" formControlName="email">
-    <mat-error *ngIf="getControls.email.invalid">{{getValidationMessage(getControls.email,"E-Mail")}}</mat-error>
-  </mat-form-field>
-  <mat-form-field >
-    <input matInput placeholder="Konu" formControlName="subject">
-    <mat-error *ngIf="getControls.subject.invalid">{{getValidationMessage(getControls.subject,"Konu")}}</mat-error>
-  </mat-form-field>
-  <mat-form-field >
-    <textarea rows="10" matInput placeholder="Mesaj" formControlName="message"></textarea>
-    <mat-error *ngIf="getControls.message.invalid">{{getValidationMessage(getControls.message,"Mesaj")}}</mat-error>
-  </mat-form-field>
-  <button [disabled]="loading"  mat-raised-button color="primary" >  <span *ngIf="loading" class="spinner-grow spinner-grow-sm mr-2" role="status" aria-hidden="true"></span>Gönder</button>
-</div>
+  <div class="form-container">
+    <mat-form-field>
+      <input matInput placeholder="İsminiz" formControlName="name">
+      <mat-error *ngIf="getControls.name.invalid">{{getValidationMessage(getControls.name,"İsim")}}</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="E-Mail Adresiniz" formControlName="email">
+      <mat-error *ngIf="getControls.email.invalid">{{getValidationMessage(getControls.email,"E-Mail")}}</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Konu" formControlName="subject">
+      <mat-error *ngIf="getControls.subject.invalid">{{getValidationMessage(getControls.subject,"Konu")}}</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <textarea rows="10" matInput placeholder="Mesaj" formControlName="message"></textarea>
+      <mat-error *ngIf="getControls.message.invalid">{{getValidationMessage(getControls.message,"Mesaj")}}</mat-error>
+    </mat-form-field>
+    <button [disabled]="loading" mat-raised-button color="primary"> <span *ngIf="loading"
+        class="spinner-grow spinner-grow-sm mr-2" role="status" aria-hidden="true"></span>Gönder</button>
+  </div>
 </form>
-  <div *ngIf="info!=null" class ="alert" [ngClass]="{'alert-primary mt-10':success,'alert-danger':!success}">  {{info}}   </div>
+<div *ngIf="info!=null" class="alert" [ngClass]="{'alert-primary mt-10':success,'alert-danger':!success}"> {{info}}
+</div>

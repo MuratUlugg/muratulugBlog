@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { AppRoutingModule } from "../app-routing.module" ;
-import { MaterialModule } from "../modules/material.module"
-import { ComponentsModule } from "../components/components.module"
+import { AppRoutingModule } from '../app-routing.module';
+import { MaterialModule } from '../modules/material.module';
+import { ComponentsModule } from '../components/components.module';
 
 import { AdminLayoutComponent } from '../layout/admin-layout/admin-layout.component';
 import { AdminNavComponent } from '../nav/admin-nav/admin-nav.component';
@@ -13,9 +13,15 @@ import { AdminArticleUpdateComponent } from './article/admin-article-update/admi
 import { AdminArticleListComponent } from './article/admin-article-list/admin-article-list.component';
 
 @NgModule({
-  declarations: [AdminLayoutComponent,AdminNavComponent, AdminHomeComponent, AdminArticleComponent, AdminArticleAddComponent, AdminArticleUpdateComponent, AdminArticleListComponent],
-  imports: [
-    CommonModule,AppRoutingModule,MaterialModule,ComponentsModule
-  ]
+  declarations: [
+    AdminLayoutComponent,
+    AdminNavComponent,
+    AdminHomeComponent,
+    AdminArticleComponent,
+    AdminArticleAddComponent,
+    AdminArticleUpdateComponent,
+    AdminArticleListComponent,
+  ],
+  imports: [CommonModule, AppRoutingModule, MaterialModule, ComponentsModule],
 })
-export class AdminModule { }
+export class AdminModule {}

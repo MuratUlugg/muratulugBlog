@@ -11,14 +11,22 @@ import { MenuArticleMostViewComponent } from './menu-article-most-view/menu-arti
 import { MenuArticleArchiveComponent } from './menu-article-archive/menu-article-archive.component';
 
 @NgModule({
-  declarations: [MenuCategoryComponent, PageTitleComponent, ArticlesComponent,UrlformatPipe, MenuArticleMostViewComponent, MenuArticleArchiveComponent],
-  imports: [
-    CommonModule,
-    RouterModule,
-    NgxPaginationModule
+  declarations: [
+    MenuCategoryComponent,
+    PageTitleComponent,
+    ArticlesComponent,
+    UrlformatPipe,
+    MenuArticleMostViewComponent,
+    MenuArticleArchiveComponent,
   ],
-  exports:[
-    MenuCategoryComponent,PageTitleComponent,ArticlesComponent,UrlformatPipe,MenuArticleMostViewComponent,MenuArticleArchiveComponent
-  ]
+  imports: [CommonModule, RouterModule, NgxPaginationModule],
+  exports: [
+    MenuCategoryComponent,
+    PageTitleComponent,
+    ArticlesComponent,
+    UrlformatPipe,
+    MenuArticleMostViewComponent,
+    MenuArticleArchiveComponent,
+  ],
 })
-export class ComponentsModule { }
+export class ComponentsModule {}
