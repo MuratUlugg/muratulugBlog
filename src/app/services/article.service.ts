@@ -50,4 +50,10 @@ export class ArticleService {
     let api = `${this.apiUrl}/ArticleViewCountUp/${id}`;
     return this.httpClient.get(api);
   }
+  public saveArticlePicture(image){
+    return this.httpClient.post<any>(`${this.apiUrl}/SaveArticlePicture`,image);
+  }
+  public addArticle(article:Article){
+    return this.httpClient.post(this.apiUrl,article);
+  }
 }

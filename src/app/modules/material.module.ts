@@ -6,14 +6,15 @@ import {MatButtonModule} from "@angular/material/button";
 import {MatInputModule} from "@angular/material/input";
 import {MatTableModule} from "@angular/material/table";
 import {MatPaginatorModule} from "@angular/material/paginator";
+import {MatAutocompleteModule} from "@angular/material/autocomplete";
 
 @NgModule({
   declarations: [],
   imports: [
-    CommonModule,BrowserAnimationsModule ,ReactiveFormsModule,FormsModule,MatButtonModule,MatInputModule,MatPaginatorModule,MatTableModule
+    CommonModule,BrowserAnimationsModule ,ReactiveFormsModule,FormsModule,MatButtonModule,MatInputModule,MatPaginatorModule,MatTableModule,MatAutocompleteModule
   ],
   exports:[
-    CommonModule,BrowserAnimationsModule ,ReactiveFormsModule,FormsModule,MatButtonModule,MatInputModule,MatPaginatorModule,MatTableModule
+    CommonModule,BrowserAnimationsModule ,ReactiveFormsModule,FormsModule,MatButtonModule,MatInputModule,MatPaginatorModule,MatTableModule,MatAutocompleteModule
   ]
 })
 export class MaterialModule { }
