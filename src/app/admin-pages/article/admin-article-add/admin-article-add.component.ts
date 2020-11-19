@@ -5,12 +5,23 @@ import { CategoryService } from 'src/app/services/category.service';
 import { Category } from 'src/app/models/category';
 import { MyvalidationService } from 'src/app/services/myvalidation.service';
 import { Router } from '@angular/router';
+import * as DeCuopledDocument from '@ckeditor/ckeditor5-build-decoupled-document';
+
 @Component({
   selector: 'app-admin-article-add',
   templateUrl: './admin-article-add.component.html',
   styleUrls: ['./admin-article-add.component.css'],
 })
 export class AdminArticleAddComponent implements OnInit {
+  public Editor = DeCuopledDocument;
+  public onReady(editor) {
+    editor.ui
+      .getEditableElement()
+      .parentElement.insertBefore(
+        editor.ui.view.toolbar.element,
+        editor.ui.getEditableElement()
+      );
+  }
   fileData: File = null;
   picture: string = null;
   articleForm: FormGroup;

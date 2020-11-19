@@ -25,13 +25,10 @@
             {{myvalidationService.getValidationMessage(getControls.contentSummary,"Özet Bilgisi ")}}
           </mat-error>
         </mat-form-field>
-        <mat-form-field>
-          <input type="text" placeholder="Makale İçerik" formControlName="contentMain" matInput />
-          <mat-error *ngIf="getControls.contentMain.invalid">
-            {{myvalidationService.getValidationMessage(getControls.contentMain,"İçerik Bilgisi ")}}
-          </mat-error>
-        </mat-form-field>
-        <button [disabled]="loading" mat-raised-button color="primary"> <span *ngIf="loading"
+        <div class='mb-5' style="border:1px solid black">
+          <ckeditor (ready)="onReady($event)" [editor]=" Editor" formControlName="contentMain"></ckeditor>
+        </div>
+        <button [disabled]=" loading" mat-raised-button color="primary"> <span *ngIf="loading"
             class="spinner-grow spinner-grow-sm mr-2" role="status" aria-hidden="true"></span>Makale Ekle</button>
       </div>
     </form>
