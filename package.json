@@ -23,6 +23,8 @@
     "@angular/router": "~10.1.0",
     "@ckeditor/ckeditor5-angular": "^2.0.1",
     "@ckeditor/ckeditor5-build-decoupled-document": "^23.1.0",
+    "@ckeditor/ckeditor5-easy-image": "^23.1.0",
+    "@ckeditor/ckeditor5-upload": "^23.1.0",
     "@fortawesome/fontawesome-free": "^5.14.0",
     "bootstrap": "^4.5.2",
     "jquery": "^3.5.1",

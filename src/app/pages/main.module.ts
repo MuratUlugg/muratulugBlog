@@ -6,6 +6,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from '../app-routing.module';
 import { ComponentsModule } from '../components/components.module';
 import { MaterialModule } from '../modules/material.module';
+import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 
 import { HomeComponent } from './home/home.component';
 import { AboutMeComponent } from './about-me/about-me.component';
@@ -36,6 +37,7 @@ import { ArchiveComponent } from './archive/archive.component';
     AppRoutingModule,
     ComponentsModule,
     MaterialModule,
+    CKEditorModule,
   ],
 })
 export class MainModule {}

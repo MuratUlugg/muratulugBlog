@@ -9,9 +9,9 @@
 
 <div class="card border-primary" *ngIf="!articleService.loading">
   <div class="card header">
-    <h3>
+    <h2>
       {{article.title}}
-    </h3>
+    </h2>
     <div>
       <span class="badge badge-pill badge-dark"><i class="fa fa-calendar"></i>
         {{article.publishDate | date:'dd.MM.yyyy'}}</span>
@@ -24,6 +24,8 @@
     </div>
   </div>
   <div class="card body">
-    <div [innerHTML]="article.contentMain"></div>
+    <ckeditor (ready)="onReady($event)" [data]="article.contentMain" [editor]=" Editor">
+    </ckeditor>
+
   </div>
 </div>

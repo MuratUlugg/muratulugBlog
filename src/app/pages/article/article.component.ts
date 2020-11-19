@@ -3,13 +3,18 @@ import { ActivatedRoute } from '@angular/router';
 import { Article } from 'src/app/models/article';
 import { Category } from 'src/app/models/category';
 import { ArticleService } from 'src/app/services/article.service';
-
+import * as DeCuopledDocument from '@ckeditor/ckeditor5-build-decoupled-document';
 @Component({
   selector: 'app-article',
   templateUrl: './article.component.html',
   styleUrls: ['./article.component.css'],
 })
 export class ArticleComponent implements OnInit {
+  public Editor = DeCuopledDocument;
+
+  public onReady(editor) {
+    editor.isReadOnly = true;
+  }
   article: Article;
   category: Category;
 
