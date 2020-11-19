@@ -4,6 +4,7 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { CategoryService } from 'src/app/services/category.service';
 import { Category } from 'src/app/models/category';
 import { MyvalidationService } from 'src/app/services/myvalidation.service';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-admin-article-add',
   templateUrl: './admin-article-add.component.html',
@@ -17,10 +18,12 @@ export class AdminArticleAddComponent implements OnInit {
   loading: boolean;
   info: string;
   categories: Category[];
+
   constructor(
     private articleService: ArticleService,
     private categoryService: CategoryService,
-    public myvalidations: MyvalidationService
+    public myvalidationService: MyvalidationService,
+    private routers: Router
   ) {}
 
   ngOnInit(): void {
@@ -28,7 +31,7 @@ export class AdminArticleAddComponent implements OnInit {
     this.articleForm = new FormGroup({
       title: new FormControl('', Validators.required),
       contentSummary: new FormControl('', Validators.required),
-      contentMain: new FormControl(''),
+      contentMain: new FormControl('', Validators.required),
       category: new FormControl('', Validators.required),
       picture: new FormControl(''),
     });
@@ -40,11 +43,12 @@ export class AdminArticleAddComponent implements OnInit {
       this.articleService.addArticle(this.articleForm.value).subscribe(
         (result) => {
           this.success = true;
-          console.log('Eklendi');
+          this.routers.navigateByUrl('/admin/article/list');
         },
         (error) => {
           this.success = false;
-          this.info = 'Bir Hata Meydana Geldi:' + error;
+          this.info = 'Bir Hata Meydana Geldi';
+          console.log(JSON.stringify(error));
         }
       );
     }
@@ -69,5 +73,9 @@ export class AdminArticleAddComponent implements OnInit {
 
   displayCategoryName(category) {
     return category.name;
+  }
+
+  get getControls() {
+    return this.articleForm.controls;
   }
 }

@@ -4,6 +4,9 @@
       <div class="form-container mt-5">
         <mat-form-field>
           <input type="text" placeholder="Kategori Seç" matInput formControlName="category" [matAutocomplete]="auto" />
+          <mat-error *ngIf="getControls.category.invalid">
+            {{myvalidationService.getValidationMessage(getControls.category,"Kategori")}}
+          </mat-error>
           <mat-autocomplete [displayWith]="displayCategoryName" #auto="matAutocomplete">
             <mat-option *ngFor="let item of categories " [value]="item">
               {{item.name}}
@@ -12,18 +15,29 @@
         </mat-form-field>
         <mat-form-field>
           <input type="text" placeholder="Başlık" formControlName="title" matInput />
+          <mat-error *ngIf="getControls.title.invalid">
+            {{myvalidationService.getValidationMessage(getControls.title,"Başlık")}}
+          </mat-error>
         </mat-form-field>
         <mat-form-field>
           <input type="text" placeholder="Makale İçerik Özet " formControlName="contentSummary" matInput />
+          <mat-error *ngIf="getControls.contentSummary.invalid">
+            {{myvalidationService.getValidationMessage(getControls.contentSummary,"Özet Bilgisi ")}}
+          </mat-error>
         </mat-form-field>
         <mat-form-field>
           <input type="text" placeholder="Makale İçerik" formControlName="contentMain" matInput />
+          <mat-error *ngIf="getControls.contentMain.invalid">
+            {{myvalidationService.getValidationMessage(getControls.contentMain,"İçerik Bilgisi ")}}
+          </mat-error>
         </mat-form-field>
         <button [disabled]="loading" mat-raised-button color="primary"> <span *ngIf="loading"
             class="spinner-grow spinner-grow-sm mr-2" role="status" aria-hidden="true"></span>Makale Ekle</button>
       </div>
     </form>
-
+    <div role="alert" *ngIf="info!=null" class="alert alert-danger mt-5 ">
+      {{info}}
+    </div>
   </div>
   <div class="col-md-3">
     <div class="card text-white bg-dark mt-5">
